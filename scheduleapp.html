@@ -1,0 +1,32 @@
+<html ng-app="scheduleapp">
+<head>
+	<script src="angular.js"></script>
+	<script src="scheduleappjs.js"></script>
+</head>
+
+<body>
+	<h1>Scheduler</h1>
+	<h3>Add a Schedule</h3>
+	<div ng-controller="func as f1">
+		<div>
+			<input type="text" value="Add" ng-model="f1.addvar"></input>
+		</div>
+			
+		<button ng-click="f1.addfunc()">Add</button>
+		
+		<div>
+			<p>Schedules:</p>
+			<button ng-hide="f1.flag" ng-click="f1.editfunc()">Edit</button>
+			<button ng-show="f1.flag" ng-click="f1.savefunc()">Save</button>
+
+			<ol>
+		 		<li ng-repeat="i in f1.arr track by $index">
+					<input type="text" ng-show="f1.flag" ng-model="i"></input>
+					<span ng-hide="f1.flag">{{i}}<span>
+					<button ng-hide="f1.flag" ng-click="f1.removefunc($index)">Delete</button>
+				</li>
+			</ol>
+		</div>
+	</div>
+</body>
+</html>
