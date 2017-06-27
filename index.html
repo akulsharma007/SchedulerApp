@@ -1,5 +1,7 @@
 <html ng-app="scheduleapp">
 <head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<script src="angular.js"></script>
 	<script src="scheduleappjs.js"></script>
 </head>
@@ -17,15 +19,16 @@
 		<div>
 			<p>Schedules:</p>
 			<button ng-hide="f1.flag" ng-click="f1.editfunc()">Edit</button>
-			<button ng-show="f1.flag" ng-click="f1.savefunc()">Save</button>
+			<button ng-show="f1.flag" ng-click="f1.donefunc()">Save</button>
 
-			<ol>
-		 		<li ng-repeat="i in f1.arr track by $index">
+			<ol class="list-group">
+		 		<li class="list-group-item" ng-repeat="i in f1.arr track by $index">
 					<input type="text" ng-show="f1.flag" ng-model="i"></input>
 					<span ng-hide="f1.flag">{{i}}<span>
 					<button ng-hide="f1.flag" ng-click="f1.removefunc($index)">Delete</button>
 				</li>
 			</ol>
+		<button ng-show="f1.flagdb" ng-click="f1.dbsave()">Save</button>
 		</div>
 	</div>
 </body>
