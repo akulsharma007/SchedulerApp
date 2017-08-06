@@ -1,0 +1,6 @@
+127.0.0.1 - - [13/Jul/2017:22:51:04 +0530] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [13/Jul/2017:22:52:44 +0530] "GET /application/webapi/schedule/Task1 HTTP/1.1" 500 8884
+0:0:0:0:0:0:0:1 - - [13/Jul/2017:22:53:47 +0530] "GET /application/webapi/schedule/Task1 HTTP/1.1" 500 8884
+0:0:0:0:0:0:0:1 - - [13/Jul/2017:22:58:26 +0530] "GET /application/webapi/schedule/Task1 HTTP/1.1" 500 8884
+127.0.0.1 - - [13/Jul/2017:22:59:12 +0530] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [13/Jul/2017:22:59:29 +0530] "GET /application/webapi/schedule/Task1 HTTP/1.1" 200 124
