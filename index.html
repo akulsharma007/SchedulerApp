@@ -15,12 +15,11 @@
 		</div>
 			
 		<button ng-click="f1.addfunc()">Add</button>
-		
-		<div>
-			<p>Schedules:</p>
-			<button ng-hide="f1.flag" ng-click="f1.editfunc()">Edit</button>
-			<button ng-show="f1.flag" ng-click="f1.donefunc()">Save</button>
+		<button ng-hide="f1.flag" ng-click="f1.editfunc()">Edit</button>
 
+		<div>
+			<p>Schedules:</p>			
+			<button ng-show="f1.flag" ng-click="f1.donefunc()">Save</button>
 			<ol class="list-group">
 		 		<li class="list-group-item" ng-repeat="i in f1.arr track by $index">
 					<input type="text" ng-show="f1.flag" ng-model="i"></input>
@@ -29,6 +28,29 @@
 				</li>
 			</ol>
 		<button ng-show="f1.flagdb" ng-click="f1.dbsave()">Save</button>
+		<input type="text" ng-show="f1.flagdb" ng-model="f1.schdName"></input>
+		</div>
+		<hr>
+		<div>
+			<button ng-click="f1.getfunc()">Get your Schedules</button>
+			<input type="text" ng-model="f1.tasktoget"></input>
+			<ol class="list-group">				
+		 		<li class="list-group-item" ng-repeat="i in f1.getarrtask track by $index">
+		 			<input type="text" ng-show="f1.flagupdate" ng-model="i"></input>
+		 			<span ng-hide="f1.flagupdate">{{i}}</span>
+		 		</li>
+			</ol>
+			<button ng-click="f1.updatefunc()">update</button>
+			<button ng-click="f1.updatedbfunc()">update to db</button>			
+			<!--
+			<ol class="list-group">				
+		 		<li class="list-group-item" ng-repeat="i in f1.getarr track by $index">
+		 			<input type="text" ng-show="f1.flag" ng-model="i"></input>
+					<span ng-hide="f1.flag">{{i}}<span>
+					<button ng-hide="f1.flag" ng-click="f1.removefunc($index)">Delete</button>
+				</li>
+			</ol>
+			<button ng-show="f1.flagdb" ng-click="f1.dbupdate()">Save</button>-->
 		</div>
 	</div>
 </body>
